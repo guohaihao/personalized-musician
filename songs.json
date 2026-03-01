@@ -1,0 +1,13 @@
+[
+  {
+    "id": "song001",
+    "title": "Generated Song",
+    "description": "Gentle folk-inspired style with acoustic guitar and warm harmonies.",
+    "audioUrl": "/audio/song001.mp3"
+  },
+  {
+    "id": "song002",
+    "title": "Generated Song 2",
+    "audioUrl": "/audio/song002.mp3"
+  }
+]
