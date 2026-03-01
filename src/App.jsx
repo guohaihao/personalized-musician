@@ -1,6 +1,18 @@
 import { useState } from 'react';
 import songs from '../songs.json';
 
+function resolveAudioUrl(audioUrl) {
+  if (!audioUrl) {
+    return '';
+  }
+
+  if (/^https?:\/\//.test(audioUrl)) {
+    return audioUrl;
+  }
+
+  return `${import.meta.env.BASE_URL}${audioUrl.replace(/^\/+/, '')}`;
+}
+
 function App() {
   const [query, setQuery] = useState('');
 
@@ -34,7 +46,7 @@ function App() {
                 <h2>{song.title}</h2>
                 {song.description ? <p>{song.description}</p> : null}
               </div>
-              <audio controls preload="none" src={song.audioUrl}>
+              <audio controls preload="none" src={resolveAudioUrl(song.audioUrl)}>
                 Your browser does not support the audio element.
               </audio>
             </article>
